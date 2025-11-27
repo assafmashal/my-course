@@ -1,0 +1,25 @@
+Nov 27 10:15:23 webserver sshd[1234]: Failed password for invalid user admin from 192.168.1.100 port 22 ssh2
+Nov 27 10:15:25 webserver sshd[1235]: Connection closed by 192.168.1.100 port 22
+Nov 27 10:16:10 webserver nginx: 2024/11/27 10:16:10 [error] 5678#5678: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.0.0.50, server: example.com
+Nov 27 10:17:45 mailserver postfix/smtpd[2345]: warning: hostname 203.0.113.25 does not resolve to address 203.0.113.25
+Nov 27 10:18:30 firewall kernel: [UFW BLOCK] IN=eth0 OUT= SRC=172.16.0.99 DST=192.168.1.1 PROTO=TCP DPT=445
+Nov 27 10:20:15 database mysqld[3456]: [ERROR] InnoDB: Unable to lock ./database/table.ibd error: 11
+Nov 27 10:22:00 webserver apache2[4567]: [Wed Nov 27 10:22:00.123456 2024] [core:error] [pid 4567] (13)Permission denied: [client 10.0.0.50] AH00132: file permissions deny server access
+Nov 27 10:23:45 vpnserver openvpn[5678]: TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)
+Nov 27 10:24:30 vpnserver openvpn[5678]: TLS Error: TLS handshake failed from 198.51.100.75
+Nov 27 10:25:10 webserver sshd[6789]: Failed password for root from 192.168.1.100 port 22 ssh2
+Nov 27 10:26:00 webserver sshd[6790]: Failed password for root from 192.168.1.100 port 22 ssh2
+Nov 27 10:27:30 loadbalancer haproxy[7890]: Server backend1/server1 is DOWN, reason: Layer4 connection problem, info: "Connection refused", check duration: 0ms. 1 active and 0 backup servers left. 0 sessions active, 0 requeued, 0 remaining in queue.
+Nov 27 10:28:15 webserver kernel: [12345.678901] TCP: request_sock_TCP: Possible SYN flooding on port 80. Sending cookies. Check SNMP counters from 192.168.1.100
+Nov 27 10:30:00 dns named[8901]: client 10.0.0.50#12345 (example.com): query (cache) 'example.com/A/IN' denied
+Nov 27 10:31:45 webserver nginx: 2024/11/27 10:31:45 [warn] 9012#9012: *2 upstream server temporarily disabled while connecting to upstream, client: 10.0.0.50
+Nov 27 10:33:20 firewall kernel: [UFW BLOCK] IN=eth0 OUT= SRC=203.0.113.25 DST=192.168.1.1 PROTO=TCP DPT=3389
+Nov 27 10:35:00 appserver java[1111]: SEVERE: Exception in thread "main" java.net.ConnectException: Connection refused: connect to 172.16.0.99:8080
+Nov 27 10:36:45 mailserver postfix/smtp[2222]: connect to mail.example.com[198.51.100.75]:25: Connection timed out
+Nov 27 10:38:20 webserver sshd[3333]: error: PAM: Authentication failure for illegal user test from 192.168.1.100
+Nov 27 10:40:00 database postgres[4444]: FATAL: password authentication failed for user "admin" from host "10.0.0.50"
+Nov 27 10:41:30 webserver apache2[5555]: [Wed Nov 27 10:41:30.987654 2024] [ssl:warn] [pid 5555] AH01909: 10.0.0.50:443:0 server certificate does NOT include an ID which matches the server name
+Nov 27 10:43:00 router bgpd[6666]: %BGP-3-NOTIFICATION: sent to neighbor 172.16.0.99 4/0 (hold time expired) 0 bytes
+Nov 27 10:44:30 storage nfsd[7777]: NFSERR_ACCES: client 198.51.100.75 attempted to access denied path /exports/data
+Nov 27 10:46:00 webserver kernel: Out of memory: Kill process 8888 (apache2) score 123 or sacrifice child from 203.0.113.25
+Nov 27 10:47:30 monitoring nagios[9999]: SERVICE ALERT: webserver;HTTP;CRITICAL;HARD;3;Connection refused from 10.0.0.50

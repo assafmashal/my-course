@@ -1,0 +1,113 @@
+==========================================
+      SYSLOG ANALYSIS REPORT
+==========================================
+
+Analysis Date: 2025-11-27 18:08:31
+Syslog File: sample_syslog.txt
+Report Generated: ./syslog_reports/syslog_analysis_20251127_180831.txt
+
+==========================================
+      SUMMARY
+==========================================
+
+Total lines with IP addresses: 22
+Lines with error/warning keywords: 12
+Unique IP addresses with issues: 5
+
+Keywords monitored:
+  - error
+  - ERROR
+  - Error
+  - fail
+  - failed
+  - FAILED
+  - failure
+  - warning
+  - WARNING
+  - warn
+  - WARN
+  - critical
+  - CRITICAL
+  - alert
+  - ALERT
+  - emergency
+  - panic
+  - denied
+  - DENIED
+  - refused
+  - timeout
+  - TIMEOUT
+  - unreachable
+  - down
+  - unable
+  - cannot
+  - fatal
+  - FATAL
+
+==========================================
+      DETAILED IP ANALYSIS
+==========================================
+
+IP Address: 10.0.0.50
+  Occurrences: 7
+  Keywords found: error, ERROR, Error, fail, failed, FAILED, refused, denied, DENIED, warn, WARN, fatal, FATAL, critical, CRITICAL, alert, ALERT
+
+  Sample log entries:
+    Nov 27 10:16:10 webserver nginx: 2024/11/27 10:16:10 [error] 5678#5678: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 10.0.0.50, server: example.com
+    Nov 27 10:22:00 webserver apache2[4567]: [Wed Nov 27 10:22:00.123456 2024] [core:error] [pid 4567] (13)Permission denied: [client 10.0.0.50] AH00132: file permissions deny server access
+    Nov 27 10:30:00 dns named[8901]: client 10.0.0.50#12345 (example.com): query (cache) 'example.com/A/IN' denied
+
+----------------------------------------
+
+IP Address: 203.0.113.25
+  Occurrences: 2
+  Keywords found: warning, WARNING, warn, WARN
+
+  Sample log entries:
+    Nov 27 10:17:45 mailserver postfix/smtpd[2345]: warning: hostname 203.0.113.25 does not resolve to address 203.0.113.25
+
+----------------------------------------
+
+IP Address: 198.51.100.75
+  Occurrences: 2
+  Keywords found: error, ERROR, Error, fail, failed, FAILED, denied, DENIED
+
+  Sample log entries:
+    Nov 27 10:24:30 vpnserver openvpn[5678]: TLS Error: TLS handshake failed from 198.51.100.75
+    Nov 27 10:44:30 storage nfsd[7777]: NFSERR_ACCES: client 198.51.100.75 attempted to access denied path /exports/data
+
+----------------------------------------
+
+IP Address: 192.168.1.100
+  Occurrences: 1
+  Keywords found: error, ERROR, Error, fail, failure
+
+  Sample log entries:
+    Nov 27 10:38:20 webserver sshd[3333]: error: PAM: Authentication failure for illegal user test from 192.168.1.100
+
+----------------------------------------
+
+IP Address: 172.16.0.99
+  Occurrences: 1
+  Keywords found: refused
+
+  Sample log entries:
+    Nov 27 10:35:00 appserver java[1111]: SEVERE: Exception in thread "main" java.net.ConnectException: Connection refused: connect to 172.16.0.99:8080
+
+----------------------------------------
+
+==========================================
+      TOP 10 PROBLEMATIC IPs
+==========================================
+
+Rank IP Address      Count      Keywords
+------------------------------------------------------------
+1    10.0.0.50       7          error, ERROR, Error, fail, failed, FAILE
+2    203.0.113.25    2          warning, WARNING, warn, WARN
+3    198.51.100.75   2          error, ERROR, Error, fail, failed, FAILE
+4    192.168.1.100   1          error, ERROR, Error, fail, failure
+5    172.16.0.99     1          refused
+
+==========================================
+      END OF REPORT
+==========================================
